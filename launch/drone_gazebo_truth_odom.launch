@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <group ns="iris">
+    <param name="/use_sim_time" value="true"/>
+    <node name="ground_truth_node" pkg="gazebo_truth_odom" type="ground_truth_node" output="screen">
+      <rosparam
+        command="load"
+        file="$(find gazebo_truth_odom)/config/drone_ground_truth.yaml"
+        subst_value="true"
+      />
+    </node>
+  </group>
+</launch>
